@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { toast } from 'sonner';
@@ -84,17 +83,17 @@ const ContactSection = () => {
     {
       icon: <MapPin className="w-5 h-5 text-law-gold" />,
       title: "Dirección",
-      content: "Av. Libertador 1234, Piso 8, Ciudad"
+      content: "Huerfanos 1294, Oficina 24, Santiago"
     },
     {
       icon: <Mail className="w-5 h-5 text-law-gold" />,
       title: "Email",
-      content: "contacto@estudiojuridico.com"
+      content: "contacto@procausa.cl"
     },
     {
       icon: <Phone className="w-5 h-5 text-law-gold" />,
       title: "Teléfono",
-      content: "+1 (555) 123-4567"
+      content: "+569 5309 5994"
     }
   ];
 
