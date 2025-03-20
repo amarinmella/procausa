@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="#home" className="flex items-center">
               <span className="font-serif text-xl md:text-2xl font-bold text-law-navy">
-                Estudio <span className="text-law-gold">Jurídico</span>
+                Pro<span className="text-law-gold">Causa</span>
               </span>
             </a>
           </div>

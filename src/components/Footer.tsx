@@ -17,10 +17,10 @@ const Footer = () => {
           {/* Logo and about */}
           <div className="lg:col-span-1">
             <div className="font-serif text-2xl font-bold mb-4">
-              Estudio <span className="text-law-gold">Jurídico</span>
+              Pro<span className="text-law-gold">Causa</span>
             </div>
             <p className="text-white/70 mb-6 max-w-xs">
-              Brindamos servicios legales de excelencia con un enfoque personalizado y comprometido con los intereses de nuestros clientes.
+              Somos tu equipo jurídico. Brindamos servicios legales de excelencia con un enfoque personalizado y comprometido con los intereses de nuestros clientes.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -127,7 +127,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Estudio Jurídico. Todos los derechos reservados.
+            © {new Date().getFullYear()} ProCausa. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-white/70 hover:text-law-gold text-sm">Términos y Condiciones</a>

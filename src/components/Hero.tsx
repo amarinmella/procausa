@@ -39,7 +39,7 @@ const Hero = () => {
       {/* Hero content */}
       <div className="container-custom relative z-10 max-w-4xl mx-auto opacity-0" ref={headingRef}>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
-          Defendemos tus derechos con <span className="text-law-gold">excelencia y compromiso</span>
+          <span className="text-law-gold">ProCausa</span> - Tu defensa es nuestra causa
         </h1>
         <p 
           ref={subheadingRef} 

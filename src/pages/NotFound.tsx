@@ -7,7 +7,7 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = 'Página no encontrada | Estudio Jurídico';
+    document.title = 'Página no encontrada | ProCausa';
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname

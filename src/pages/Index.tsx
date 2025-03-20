@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   // Change page title when component mounts
   useEffect(() => {
-    document.title = 'Estudio Jurídico | Excelencia Legal';
+    document.title = 'ProCausa | Tu Defensa es Nuestra Causa';
     
     // Smooth scroll to section when URL has hash
     if (window.location.hash) {

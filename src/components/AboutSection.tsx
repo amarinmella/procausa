@@ -65,10 +65,10 @@ const AboutSection = () => {
               Sobre Nosotros
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-law-navy mb-6">
-              Una firma legal con más de 20 años de experiencia
+              ProCausa - Somos tu equipo jurídico
             </h2>
             <p className="text-law-dark-gray/80 leading-relaxed mb-6">
-              Fundado en 2003, nuestro estudio jurídico ha crecido hasta convertirse en una de las firmas más respetadas en el país. Contamos con un equipo de abogados altamente capacitados y con vasta experiencia en diversas áreas del derecho.
+              Fundado con la misión de proteger los derechos e intereses de nuestros clientes, ProCausa ha crecido hasta convertirse en una de las firmas más respetadas en el país. Contamos con un equipo de abogados altamente capacitados y con vasta experiencia en diversas áreas del derecho.
             </p>
             <p className="text-law-dark-gray/80 leading-relaxed mb-8">
               Nuestra misión es proporcionar asesoramiento jurídico de excelencia, defendiendo los intereses de nuestros clientes con integridad y profesionalismo. Nos distinguimos por nuestro enfoque personalizado, entendiendo que cada caso es único y requiere soluciones a medida.
