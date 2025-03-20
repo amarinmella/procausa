@@ -38,32 +38,25 @@ const TeamSection = () => {
 
   const team = [
     {
-      name: "Carlos Mendoza",
+      name: "Alberto Pacheco",
       role: "Socio Fundador",
-      specialty: "Derecho Corporativo",
+      specialty: "Abogado",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
       delay: 0
     },
     {
-      name: "Ana Rivera",
-      role: "Socia",
-      specialty: "Derecho Familiar",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
+      name: "Jaime Encina",
+      role: "Socio Fundador",
+      specialty: "Periodista y CEO",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
       delay: 100
     },
     {
-      name: "Javier Herrera",
-      role: "Abogado Senior",
-      specialty: "Litigación Civil",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      name: "Andrés Marín",
+      role: "Socio Fundador",
+      specialty: "CTO",
+      image: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
       delay: 200
-    },
-    {
-      name: "Gabriela Torres",
-      role: "Abogada Senior",
-      specialty: "Derecho Laboral",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80",
-      delay: 300
     }
   ];
 
@@ -78,14 +71,14 @@ const TeamSection = () => {
             Nuestro Equipo
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-law-navy mb-6">
-            Conoce a nuestros abogados expertos
+            Conoce a nuestros socios fundadores
           </h2>
           <p className="text-law-dark-gray/80 leading-relaxed">
-            Contamos con un equipo de profesionales altamente calificados y con amplia experiencia en diversas áreas del derecho, comprometidos con brindarte el mejor servicio legal.
+            Un equipo de profesionales comprometidos con brindarte el mejor servicio legal, liderado por tres socios fundadores con amplia experiencia en sus respectivas áreas.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member, index) => (
             <div 
               key={index}
@@ -121,7 +114,7 @@ const TeamSection = () => {
                   {member.role}
                 </p>
                 <p className="text-law-dark-gray/80 text-sm">
-                  Especialista en {member.specialty}
+                  {member.specialty}
                 </p>
               </div>
             </div>
