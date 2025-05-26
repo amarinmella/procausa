@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   
   const [formData, setFormData] = useState({
