@@ -64,16 +64,32 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				law: {
+					// ProCausa
 					'navy': '#0A2342',
-					'gold': '#D5A021',
+					'navy-soft': '#143257',
+					// Pacheco Espinoza — extraido de logo.jpg. 6.32:1 sobre blanco (AA)
+					'teal': '#006885',
+					'teal-dark': '#00546B',      // 8.47:1 sobre blanco — hover
+					'teal-light': '#5CBBD4',     // 7.14:1 sobre navy — para fondos oscuros
+					// Dorado: decorativo. Sobre blanco da 2.37:1, NO usar como texto.
+					'gold': '#D5A021',           // 6.66:1 sobre navy — ok sobre oscuro
+					'gold-700': '#8A6410',       // 5.37:1 sobre blanco — unica variante de texto
 					'light-gray': '#F5F5F5',
 					'dark-gray': '#333333',
 					'cream': '#F8F4E3'
 				}
 			},
 			fontFamily: {
-				'serif': ['Playfair Display', 'serif'],
-				'sans': ['Montserrat', 'sans-serif']
+				'serif': ['"Source Serif 4"', 'Playfair Display', 'Georgia', 'serif'],
+				'sans': ['Inter', 'Montserrat', 'system-ui', 'sans-serif']
+			},
+			fontSize: {
+				'eyebrow': ['0.8125rem', { lineHeight: '1.2', letterSpacing: '0.08em', fontWeight: '600' }],
+				'body': ['1.0625rem', { lineHeight: '1.7' }],
+				'lead': ['clamp(1.0625rem, 1.4vw, 1.1875rem)', { lineHeight: '1.7' }],
+				'h3': ['clamp(1.25rem, 2vw, 1.5rem)', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+				'h2': ['clamp(1.875rem, 3.5vw, 2.75rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+				'display': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.05', letterSpacing: '-0.03em' }]
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

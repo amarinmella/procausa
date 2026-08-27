@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 15%;
+    --ring: 194 100% 26%;
 
     --radius: 0.5rem;
   }
@@ -80,6 +80,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }
 
@@ -93,28 +98,64 @@
 
 /* Glass effect for navbar */
 .glass-nav {
-  @apply bg-white/80 backdrop-blur-md;
+  @apply bg-white/85 backdrop-blur-md;
 }
 
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  /* Compensa la navbar fija al saltar a una seccion con #ancla */
+  scroll-padding-top: 5rem;
 }
 
-/* Animation delay utilities */
-.animation-delay-200 {
-  animation-delay: 200ms;
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+
+/*
+  Reveal al hacer scroll.
+  Antes esto se hacia con `animate-fade-in`, que solo animaba opacidad: el
+  `translate-y-4` de las tarjetas nunca se quitaba y quedaban 16px corridas
+  para siempre. Ademas el transitionDelay inline era codigo muerto porque no
+  habia transicion. Con transition + .is-visible ambas cosas funcionan.
+*/
+.reveal {
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
 }
 
-.animation-delay-400 {
-  animation-delay: 400ms;
+/*
+  Clave: el contenido solo se oculta si un script inline de index.html marco
+  el documento con `js-reveal`, cosa que hace unicamente cuando hay soporte de
+  IntersectionObserver. Sin JS, con JS caido o con el observer sin responder,
+  la pagina se ve completa en vez de quedar en blanco.
+*/
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  will-change: opacity, transform;
 }
 
-.animation-delay-600 {
-  animation-delay: 600ms;
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-/* Preserve aspect ratio for images */
-img {
+/* Utilidad de recorte. Antes era una regla global `img {}` que recortaba
+   TODA imagen del sitio, incluido el logo. Ahora es opt-in. */
+.img-cover {
   @apply object-cover object-center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-reveal .reveal,
+  .js-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
