@@ -3,6 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 import { WHATSAPP_URL } from '@/lib/contact';
 import SectionHeading from '@/components/SectionHeading';
+import { partner } from '@/lib/content';
 
 /*
   Sin foto: la que habia era de un desconocido sacado de Unsplash bajo el
@@ -10,13 +11,6 @@ import SectionHeading from '@/components/SectionHeading';
   credibilidad concreto. El monograma se ve deliberado y no finge ser una
   persona real. Reemplazar por el retrato real cuando lo entreguen.
 */
-const partner = {
-  name: 'Alberto Pacheco',
-  role: 'Socio fundador',
-  title: 'Abogado',
-  initials: 'AP',
-  bio: 'Lidera la práctica del estudio y atiende personalmente las consultas que llegan por ProCausa.'
-};
 
 const TeamSection = () => {
   const reveal = useReveal();
@@ -33,23 +27,46 @@ const TeamSection = () => {
         </div>
 
         <div ref={reveal} className="reveal max-w-2xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm p-8 sm:p-10 flex flex-col sm:flex-row items-center sm:items-start gap-7 text-center sm:text-left">
-            <div
-              className="shrink-0 w-28 h-28 rounded-full bg-law-navy flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <span className="font-serif text-3xl font-bold text-law-gold tracking-wide">
-                {partner.initials}
-              </span>
+          <article className="bg-white rounded-lg shadow-sm p-8 sm:p-10">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-7 text-center sm:text-left">
+              <div
+                className="shrink-0 w-28 h-28 rounded-full bg-law-navy flex items-center justify-center"
+                aria-hidden="true"
+              >
+                <span className="font-serif text-3xl font-bold text-law-gold tracking-wide">
+                  {partner.initials}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-h3 font-serif font-bold text-law-navy">{partner.name}</h3>
+                <p className="text-law-teal font-semibold mt-1">{partner.role}</p>
+                <p className="text-law-dark-gray/70 text-sm">{partner.title}</p>
+
+                <div className="mt-4 space-y-3 text-law-dark-gray/85">
+                  {partner.bio.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-h3 font-serif font-bold text-law-navy">{partner.name}</h3>
-              <p className="text-law-teal font-semibold mt-1">{partner.role}</p>
-              <p className="text-law-dark-gray/70 text-sm">{partner.title}</p>
-              <p className="text-law-dark-gray/85 mt-4">{partner.bio}</p>
+            <div className="mt-8 pt-7 border-t border-law-navy/10">
+              <h4 className="text-eyebrow uppercase text-law-teal font-semibold mb-4">
+                Áreas de experiencia
+              </h4>
+              <ul className="flex flex-wrap gap-2">
+                {partner.expertise.map((area) => (
+                  <li
+                    key={area}
+                    className="bg-law-teal/10 text-law-teal text-sm font-medium px-3 py-1.5 rounded"
+                  >
+                    {area}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </article>
 
           <div className="mt-8 flex justify-center">
             <img

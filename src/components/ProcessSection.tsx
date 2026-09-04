@@ -13,9 +13,9 @@ const steps = [
   },
   {
     number: '02',
-    title: 'Evaluamos sin costo',
+    title: 'Evaluamos tu caso',
     description:
-      'Un abogado revisa tu situación y te dice con franqueza si hay caso, qué alternativas existen y cuál conviene. Si no hay nada que hacer, también te lo decimos.'
+      'Un abogado revisa tu situación y te dice con franqueza si hay caso, qué alternativas existen y cuál conviene. Si hace falta reunirse, vamos donde estés. Si no hay nada que hacer, también te lo decimos.'
   },
   {
     number: '03',

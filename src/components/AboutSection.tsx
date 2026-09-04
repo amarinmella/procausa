@@ -1,28 +1,28 @@
 import React from 'react';
-import { Shield, Scale, Clock, Users } from 'lucide-react';
+import { Award, Target, TrendingUp, Users } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 import SectionHeading from '@/components/SectionHeading';
 
 const values = [
   {
-    icon: Shield,
-    title: 'Integridad',
-    description: 'Actuamos con transparencia y ética en cada caso, honrando la confianza de nuestros clientes.'
+    icon: Award,
+    title: 'Experiencia',
+    description: 'Más de tres décadas litigando y asesorando en materias civiles, comerciales e inmobiliarias.'
   },
   {
-    icon: Scale,
-    title: 'Excelencia',
-    description: 'Nos comprometemos a ofrecer servicios jurídicos de la más alta calidad y profesionalismo.'
-  },
-  {
-    icon: Clock,
-    title: 'Dedicación',
-    description: 'Cada caso recibe atención personalizada y seguimiento directo, sin intermediarios.'
+    icon: TrendingUp,
+    title: 'Visión de negocio',
+    description: 'No solo el problema jurídico: también los intereses económicos y patrimoniales que hay detrás.'
   },
   {
     icon: Users,
-    title: 'Claridad',
-    description: 'Explicamos tu situación en palabras simples, para que decidas con toda la información.'
+    title: 'Atención directa',
+    description: 'El abogado que evalúa tu caso es el que lo lleva. Sin intermediarios ni ejecutivos comerciales.'
+  },
+  {
+    icon: Target,
+    title: 'Estrategia',
+    description: 'Alternativas diseñadas para prevenir conflictos, proteger activos y llegar a acuerdos eficientes.'
   }
 ];
 
@@ -46,13 +46,14 @@ const AboutSection = () => {
                   Pacheco · Espinoza &amp; Cía. Abogados
                 </strong>
                 . Nace de una idea simple: que consultar a un abogado no debería ser
-                intimidante ni caro de partida.
+                intimidante ni confuso.
               </p>
               <p>
-                Trabajamos con personas y empresas en derecho corporativo, laboral,
-                inmobiliario, familiar y litigación civil. Cada caso lo lleva un abogado
-                con nombre y apellido, que responde directamente y explica en palabras
-                simples qué opciones hay y qué esperar de cada una.
+                Trabajamos con empresas, empresarios y particulares en materias civiles,
+                comerciales e inmobiliarias, en litigación y en el desarrollo de proyectos
+                inmobiliarios. Cada caso lo lleva un abogado con nombre y apellido, que
+                responde directamente y explica en palabras simples qué opciones hay y qué
+                esperar de cada una.
               </p>
             </div>
 

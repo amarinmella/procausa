@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Variables de entorno: .env.example es la plantilla versionada.
+# El .env real (VITE_WEB3FORMS_KEY y lo que venga) no se sube nunca.
+.env
+.env.*
+!.env.example

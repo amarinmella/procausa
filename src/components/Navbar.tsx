@@ -91,7 +91,7 @@ const Navbar = () => {
                   : 'bg-law-navy text-white hover:bg-law-teal'
               )}
             >
-              Consulta gratuita
+              Escríbenos
             </a>
           </div>
 
@@ -136,7 +136,7 @@ const Navbar = () => {
             className="bg-law-navy text-white px-6 py-3 rounded text-center font-medium mt-4 hover:bg-law-teal transition-colors duration-300"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Consulta gratuita por WhatsApp
+            Escríbenos por WhatsApp
           </a>
         </div>
       </div>

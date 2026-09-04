@@ -10,8 +10,8 @@ import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { ADDRESS, EMAIL, PHONE_E164 } from '@/lib/contact';
-import { services, faqs } from '@/lib/content';
+import { SERVICE_AREA, EMAIL, PHONE_E164 } from '@/lib/contact';
+import { services, faqs, partner } from '@/lib/content';
 
 const SITE_URL = 'https://procausa.cl';
 
@@ -32,12 +32,16 @@ const structuredData = {
       telephone: `+${PHONE_E164}`,
       image: `${SITE_URL}/og-image.png`,
       priceRange: '$$',
+      /*
+        Sin `streetAddress`: el estudio atiende a domicilio y no tiene oficina.
+        Declarar una calle inexistente le pide a Google que levante una ficha
+        de negocio en un lugar vacio. La senal geografica la da `areaServed`.
+      */
       address: {
         '@type': 'PostalAddress',
-        streetAddress: ADDRESS.street,
-        addressLocality: ADDRESS.city,
-        addressRegion: ADDRESS.region,
-        addressCountry: ADDRESS.country
+        addressLocality: SERVICE_AREA.city,
+        addressRegion: SERVICE_AREA.region,
+        addressCountry: SERVICE_AREA.country
       },
       openingHoursSpecification: [
         {
@@ -53,7 +57,11 @@ const structuredData = {
           closes: '13:00'
         }
       ],
-      areaServed: { '@type': 'Country', name: 'Chile' },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Región Metropolitana de Santiago' },
+        { '@type': 'Country', name: 'Chile' }
+      ],
+      employee: { '@id': `${SITE_URL}/#alberto-pacheco` },
       knowsAbout: services.map((service) => service.title),
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
@@ -63,6 +71,15 @@ const structuredData = {
           itemOffered: { '@type': 'Service', name: service.title, description: service.description }
         }))
       }
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#alberto-pacheco`,
+      name: partner.name,
+      jobTitle: partner.title,
+      description: partner.bio[0],
+      knowsAbout: [...partner.expertise],
+      worksFor: { '@id': `${SITE_URL}/#organization` }
     },
     {
       '@type': 'FAQPage',

@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Linkedin, Instagram, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { services } from '@/lib/content';
-import {
-  ADDRESS_ONE_LINE,
-  EMAIL,
-  MAP_LINK_URL,
-  PHONE_DISPLAY,
-  PHONE_E164
-} from '@/lib/contact';
+import { COVERAGE_SHORT, EMAIL, PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 
 const quickLinks = [
   { name: 'Inicio', href: '#home' },
@@ -70,7 +64,8 @@ const Footer = () => (
           <p className="text-white/55 text-sm mb-5">por Pacheco · Espinoza &amp; Cía.</p>
 
           <p className="text-white/70 mb-6 max-w-xs">
-            Asesoría legal en Santiago para personas y empresas. Primera consulta sin costo.
+            Asesoría legal en Santiago para empresas, empresarios y particulares.
+            Primera conversación sin compromiso.
           </p>
 
           {/* El logo es un JPG con fondo blanco: sobre navy va en un panel
@@ -151,14 +146,11 @@ const Footer = () => (
           <ul className="space-y-4 text-white/70">
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-law-gold shrink-0 mt-1" aria-hidden="true" />
-              <a
-                href={MAP_LINK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-law-gold transition-colors"
-              >
-                {ADDRESS_ONE_LINE}
-              </a>
+              <span>
+                Atención a domicilio en
+                <br />
+                {COVERAGE_SHORT}
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="w-4 h-4 text-law-gold shrink-0 mt-1" aria-hidden="true" />

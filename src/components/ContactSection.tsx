@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { MapPin, Mail, Phone, Send, AlertCircle, MessageCircle } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, AlertCircle, MessageCircle, Home, Video } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { useReveal } from '@/hooks/useReveal';
 import SectionHeading from '@/components/SectionHeading';
 import { services } from '@/lib/content';
 import {
-  ADDRESS_ONE_LINE,
+  COVERAGE_SHORT,
   EMAIL,
   HOURS,
-  MAP_EMBED_URL,
-  MAP_LINK_URL,
   PHONE_DISPLAY,
   PHONE_E164,
   WHATSAPP_URL
@@ -107,10 +105,35 @@ const ContactSection = () => {
       hasError ? 'border-red-500' : 'border-gray-300'
     );
 
-  const contactInfo = [
-    { icon: MapPin, title: 'Dirección', content: ADDRESS_ONE_LINE, href: MAP_LINK_URL },
+  const contactInfo: {
+    icon: typeof MapPin;
+    title: string;
+    content: string;
+    href: string | null;
+  }[] = [
+    { icon: MapPin, title: 'Dónde atendemos', content: COVERAGE_SHORT, href: null },
     { icon: Mail, title: 'Email', content: EMAIL, href: 'mailto:' + EMAIL },
     { icon: Phone, title: 'Teléfono', content: PHONE_DISPLAY, href: 'tel:+' + PHONE_E164 }
+  ];
+
+  /* Reemplaza al mapa: sin oficina, lo util no es una ubicacion sino saber
+     como se concreta la reunion. */
+  const meetingModes = [
+    {
+      icon: Home,
+      title: 'En tu casa u oficina',
+      description: 'Vamos donde estés dentro de Santiago y la Región Metropolitana, el día y la hora que te acomoden.'
+    },
+    {
+      icon: Video,
+      title: 'Por videollamada',
+      description: 'Si estás en regiones o prefieres resolverlo sin reunión presencial.'
+    },
+    {
+      icon: MessageCircle,
+      title: 'Por WhatsApp',
+      description: 'Para la consulta inicial y para coordinar cuándo y dónde nos juntamos.'
+    }
   ];
 
   return (
@@ -343,20 +366,24 @@ const ContactSection = () => {
               <ul className="space-y-5">
                 {contactInfo.map((item) => {
                   const Icon = item.icon;
-                  const isExternal = item.href.startsWith('http');
+                  const isExternal = item.href?.startsWith('http') ?? false;
                   return (
                     <li key={item.title} className="flex items-start gap-4">
                       <Icon className="w-5 h-5 text-law-teal shrink-0 mt-1" aria-hidden="true" />
                       <div>
                         <h4 className="font-semibold text-law-navy">{item.title}</h4>
-                        <a
-                          href={item.href}
-                          target={isExternal ? '_blank' : undefined}
-                          rel={isExternal ? 'noopener noreferrer' : undefined}
-                          className="text-law-dark-gray/85 hover:text-law-teal transition-colors"
-                        >
-                          {item.content}
-                        </a>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            target={isExternal ? '_blank' : undefined}
+                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                            className="text-law-dark-gray/85 hover:text-law-teal transition-colors"
+                          >
+                            {item.content}
+                          </a>
+                        ) : (
+                          <p className="text-law-dark-gray/85">{item.content}</p>
+                        )}
                       </div>
                     </li>
                   );
@@ -386,17 +413,31 @@ const ContactSection = () => {
               </a>
             </div>
 
-            {/* Mapa real. Antes era un div gris con el texto "Mapa de ubicacion". */}
-            <div className="rounded-lg overflow-hidden h-[300px] border border-law-navy/10">
-              <iframe
-                title="Ubicación de ProCausa en Huérfanos 1294, Santiago"
-                src={MAP_EMBED_URL}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                style={{ border: 0 }}
-              />
+            {/*
+              Aqui habia un mapa de Google a una oficina que el estudio no
+              tiene. Sin direccion, al visitante no le sirve una ubicacion:
+              le sirve saber que el abogado se desplaza hasta el.
+            */}
+            <div className="bg-law-navy text-white rounded-lg p-7 sm:p-9">
+              <h3 className="text-h3 font-serif font-bold mb-2">Vamos donde estés</h3>
+              <p className="text-white/75 mb-7">
+                No necesitas ir a ninguna oficina ni perder media mañana en el centro.
+              </p>
+
+              <ul className="space-y-5">
+                {meetingModes.map((mode) => {
+                  const Icon = mode.icon;
+                  return (
+                    <li key={mode.title} className="flex items-start gap-4">
+                      <Icon className="w-5 h-5 text-law-gold shrink-0 mt-1" aria-hidden="true" />
+                      <div>
+                        <h4 className="font-semibold">{mode.title}</h4>
+                        <p className="text-white/70 text-sm mt-0.5">{mode.description}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import LegalPage from '@/components/LegalPage';
-import { EMAIL, ADDRESS_ONE_LINE } from '@/lib/contact';
+import { EMAIL } from '@/lib/contact';
 
 /*
   BORRADOR. Debe ser revisado y aprobado por el estudio antes de publicar,
@@ -15,9 +15,10 @@ const Privacidad = () => (
 
     <h2>Quién trata tus datos</h2>
     <p>
-      El responsable del tratamiento es <strong>Pacheco · Espinoza &amp; Cía. Abogados</strong>,
-      con domicilio en {ADDRESS_ONE_LINE}. Para cualquier consulta sobre esta política puedes
-      escribir a <a href={'mailto:' + EMAIL}>{EMAIL}</a>.
+      El responsable del tratamiento es <strong>Pacheco · Espinoza &amp; Cía. Abogados</strong>.
+      La atención se presta a domicilio y de forma remota, sin oficina abierta al público, por lo
+      que el canal de contacto para ejercer tus derechos es el correo{' '}
+      <a href={'mailto:' + EMAIL}>{EMAIL}</a>.
     </p>
 
     <h2>Qué datos recogemos</h2>

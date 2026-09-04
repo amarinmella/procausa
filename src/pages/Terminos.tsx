@@ -32,8 +32,7 @@ const Terminos = () => (
 
     <h2>Primera consulta</h2>
     <p>
-      La evaluación inicial de tu caso es sin costo y no obliga a ninguna de las partes a
-      continuar. Cualquier servicio posterior se presupuesta y acuerda por escrito antes de
+      La evaluación inicial de tu caso no obliga a ninguna de las partes a continuar. Cualquier servicio posterior se presupuesta y acuerda por escrito antes de
       comenzar.
     </p>
 

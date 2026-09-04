@@ -1,17 +1,12 @@
 import React from 'react';
-import { MapPin, Scale, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Award, Car, MessageCircle, ShieldCheck } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
-import { ADDRESS } from '@/lib/contact';
+import { COVERAGE_SHORT } from '@/lib/contact';
 
-/*
-  Los valores marcados abajo son placeholders honestos: describen algo
-  verificable hoy en vez de inventar cifras. Reemplazar "Años de ejercicio"
-  y la colegiatura cuando el estudio entregue los datos reales.
-*/
 const items = [
-  { icon: Scale, value: '6 áreas', label: 'de práctica cubiertas' },
-  { icon: MessageCircle, value: 'Sin costo', label: 'la primera consulta' },
-  { icon: MapPin, value: ADDRESS.city, label: 'Huérfanos 1294, Of. 24' },
+  { icon: Award, value: '+30 años', label: 'de ejercicio profesional' },
+  { icon: MessageCircle, value: 'Sin compromiso', label: 'la primera conversación' },
+  { icon: Car, value: 'Vamos donde estés', label: COVERAGE_SHORT },
   { icon: ShieldCheck, value: 'Atención directa', label: 'con el abogado a cargo' }
 ];
 

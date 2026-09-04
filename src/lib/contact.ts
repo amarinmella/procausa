@@ -8,30 +8,36 @@ export const PHONE_DISPLAY = '+56 9 5309 5994';
 export const PHONE_E164 = '56953095994';
 export const EMAIL = 'contacto@procausa.cl';
 
-export const ADDRESS = {
-  street: 'Huérfanos 1294, Oficina 24',
+/*
+  ProCausa no tiene oficina: la atencion es a domicilio en Santiago y la
+  Region Metropolitana, y por videollamada para el resto del pais.
+
+  Por eso aqui NO hay `street` ni enlaces a Google Maps. Publicar una
+  direccion inexistente no es solo un texto equivocado: en el JSON-LD le
+  pide a Google que cree una ficha de negocio en un lugar donde no hay
+  nadie, y eso es dificil de revertir despues.
+
+  Si algun dia arriendan oficina, agregar `street` aqui y volver a poner el
+  mapa en ContactSection.
+*/
+export const SERVICE_AREA = {
   city: 'Santiago',
   region: 'Región Metropolitana',
   country: 'CL'
 } as const;
 
-export const ADDRESS_ONE_LINE = `${ADDRESS.street}, ${ADDRESS.city}`;
+/** Version corta para tarjetas y listados. */
+export const COVERAGE_SHORT = 'Santiago y Región Metropolitana';
+
+/** Version larga para parrafos y respuestas. */
+export const COVERAGE_LONG =
+  'Nos reunimos en tu casa u oficina dentro de Santiago y la Región Metropolitana. Para el resto del país atendemos por videollamada.';
 
 export const HOURS = [
   { label: 'Lunes a viernes', value: '9:00 – 18:00' },
   { label: 'Sábados', value: '9:00 – 13:00' },
   { label: 'Domingos', value: 'Cerrado' }
 ] as const;
-
-/** Google Maps embed. `loading="lazy"` en el iframe que lo consume. */
-export const MAP_EMBED_URL =
-  'https://www.google.com/maps?q=' +
-  encodeURIComponent('Huérfanos 1294, Santiago, Chile') +
-  '&output=embed';
-
-export const MAP_LINK_URL =
-  'https://www.google.com/maps/search/?api=1&query=' +
-  encodeURIComponent('Huérfanos 1294, Santiago, Chile');
 
 const WHATSAPP_BASE = `https://wa.me/${PHONE_E164}`;
 

@@ -15,6 +15,10 @@ const Hero = () => {
         Imagen de fondo como <img> y no como background-image de CSS: asi
         puede llevar fetchpriority y el navegador la descubre en el parseo
         inicial en vez de esperar al CSSOM. Es el LCP de la pagina.
+
+        El atributo va por spread y en minusculas a proposito: React 18 no
+        reconoce `fetchPriority` en camelCase, lo descarta con un warning y
+        nunca llega al DOM, con lo que la prioridad de descarga no se aplica.
       */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -23,7 +27,7 @@ const Hero = () => {
           aria-hidden="true"
           width={2070}
           height={1380}
-          fetchPriority="high"
+          {...({ fetchpriority: 'high' } as Record<string, string>)}
           decoding="async"
           className="w-full h-full img-cover"
         />
@@ -58,8 +62,9 @@ const Hero = () => {
           className="reveal text-lead text-white/90 mb-9 max-w-2xl mx-auto"
           style={{ transitionDelay: '160ms' }}
         >
-          Asesoría legal en Santiago para personas y empresas. Cuéntanos tu caso y
-          te decimos con claridad dónde estás parado, sin costo y sin compromiso.
+          Más de 30 años asesorando a empresas, empresarios y particulares en materias
+          civiles, comerciales e inmobiliarias. Cuéntanos tu caso y te decimos con
+          claridad dónde estás parado, sin compromiso.
         </p>
 
         <div
