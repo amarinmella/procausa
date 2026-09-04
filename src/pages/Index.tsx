@@ -30,7 +30,7 @@ const structuredData = {
       url: SITE_URL,
       email: EMAIL,
       telephone: `+${PHONE_E164}`,
-      image: `${SITE_URL}/og-image.png`,
+      image: `${SITE_URL}/og-image.jpg`,
       priceRange: '$$',
       /*
         Sin `streetAddress`: el estudio atiende a domicilio y no tiene oficina.
