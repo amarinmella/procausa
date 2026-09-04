@@ -31,7 +31,9 @@ const TeamSection = () => {
 
         <div ref={reveal} className="reveal max-w-2xl mx-auto">
           <article className="bg-white rounded-lg shadow-sm p-8 sm:p-10">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-7 text-center sm:text-left">
+            <div className="flex flex-col items-center text-center">
+              {/* El aro anterior era ring-white sobre tarjeta blanca: invisible.
+                  Un ring navy al 10% si define el borde del retrato. */}
               <img
                 src="/img/alberto-pacheco.webp"
                 alt={`${partner.name}, ${partner.role} de Pacheco · Espinoza & Cía. Abogados`}
@@ -39,27 +41,25 @@ const TeamSection = () => {
                 height={512}
                 loading="lazy"
                 decoding="async"
-                className="shrink-0 w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover shadow-md ring-4 ring-white"
+                className="w-44 h-44 sm:w-52 sm:h-52 rounded-full object-cover shadow-lg ring-1 ring-law-navy/10"
               />
 
-              <div>
-                <h3 className="text-h3 font-serif font-bold text-law-navy">{partner.name}</h3>
-                <p className="text-law-teal font-semibold mt-1">{partner.role}</p>
-                <p className="text-law-dark-gray/70 text-sm">{partner.title}</p>
+              <h3 className="text-h3 font-serif font-bold text-law-navy mt-7">{partner.name}</h3>
+              <p className="text-law-teal font-semibold mt-1">{partner.role}</p>
+              <p className="text-law-dark-gray/70 text-sm">{partner.title}</p>
 
-                <div className="mt-4 space-y-3 text-law-dark-gray/85">
-                  {partner.bio.map((paragraph) => (
-                    <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-                  ))}
-                </div>
+              <div className="mt-5 space-y-3 text-law-dark-gray/85 max-w-xl">
+                {partner.bio.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                ))}
               </div>
             </div>
 
             <div className="mt-8 pt-7 border-t border-law-navy/10">
-              <h4 className="text-eyebrow uppercase text-law-teal font-semibold mb-4">
+              <h4 className="text-eyebrow uppercase text-law-teal font-semibold mb-4 text-center">
                 Áreas de experiencia
               </h4>
-              <ul className="flex flex-wrap gap-2">
+              <ul className="flex flex-wrap justify-center gap-2">
                 {partner.expertise.map((area) => (
                   <li
                     key={area}
