@@ -122,7 +122,7 @@ const ContactSection = () => {
     {
       icon: Home,
       title: 'En tu casa u oficina',
-      description: 'Vamos donde estés dentro de Santiago y la Región Metropolitana, el día y la hora que te acomoden.'
+      description: 'Vamos donde estés dentro de Santiago y la Región Metropolitana, sin costo adicional por el traslado.'
     },
     {
       icon: Video,

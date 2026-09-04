@@ -88,11 +88,6 @@ export const partner = {
   ]
 } as const;
 
-/*
-  PENDIENTE DE CONFIRMACION DEL ESTUDIO antes de publicar: el alcance real
-  del desplazamiento a domicilio y si hay recargo por traslado (hoy no se
-  promete ninguno, pero tampoco se descarta).
-*/
 export const faqs = [
   {
     question: '¿Cómo funciona la primera consulta?',
@@ -102,7 +97,7 @@ export const faqs = [
   {
     question: '¿Tienen oficina a la que pueda ir?',
     answer:
-      'No trabajamos con oficina abierta al público: preferimos ir nosotros donde estés. Dentro de Santiago y la Región Metropolitana nos reunimos en tu casa, tu oficina o el lugar que te acomode. Si prefieres no tener reunión presencial, lo vemos por videollamada.'
+      'No trabajamos con oficina abierta al público: preferimos ir nosotros donde estés. Dentro de Santiago y la Región Metropolitana nos reunimos en tu casa, tu oficina o el lugar que te acomode, sin costo adicional por el traslado. Si prefieres no tener reunión presencial, lo vemos por videollamada.'
   },
   {
     question: '¿Cuánto cuesta llevar un caso?',
@@ -112,7 +107,7 @@ export const faqs = [
   {
     question: '¿Atienden fuera de Santiago?',
     answer:
-      'Sí. En Santiago y la Región Metropolitana vamos a tu casa u oficina. Si estás en regiones, la atención se coordina por videollamada y WhatsApp, y podemos representarte en tribunales de otras regiones.'
+      'Sí. En Santiago y la Región Metropolitana vamos a tu casa u oficina sin costo adicional. Si estás en regiones, la atención se coordina por videollamada y WhatsApp, y podemos representarte en tribunales de otras regiones.'
   },
   {
     question: '¿Asesoran proyectos inmobiliarios desde el inicio?',
