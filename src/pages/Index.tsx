@@ -78,6 +78,8 @@ const structuredData = {
       name: partner.name,
       jobTitle: partner.title,
       description: partner.bio[0],
+      // JPEG y no WebP: no todos los consumidores de schema procesan WebP.
+      image: `${SITE_URL}/img/alberto-pacheco.jpg`,
       knowsAbout: [...partner.expertise],
       worksFor: { '@id': `${SITE_URL}/#organization` }
     },

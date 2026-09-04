@@ -6,10 +6,13 @@ import SectionHeading from '@/components/SectionHeading';
 import { partner } from '@/lib/content';
 
 /*
-  Sin foto: la que habia era de un desconocido sacado de Unsplash bajo el
-  rotulo "Socio Fundador", que para un estudio juridico es un problema de
-  credibilidad concreto. El monograma se ve deliberado y no finge ser una
-  persona real. Reemplazar por el retrato real cuando lo entreguen.
+  Retrato real del socio, entregado por el estudio. Reemplaza al monograma
+  que servia de marcador mientras no habia foto (y antes de eso, a una imagen
+  de stock de un desconocido, que en un sitio juridico es un problema de
+  credibilidad, no un detalle estetico).
+
+  El archivo se sirve en WebP a 512px: el original pesaba 2,6 MB y esta bajo
+  el fold, asi que va con loading="lazy".
 */
 
 const TeamSection = () => {
@@ -29,14 +32,15 @@ const TeamSection = () => {
         <div ref={reveal} className="reveal max-w-2xl mx-auto">
           <article className="bg-white rounded-lg shadow-sm p-8 sm:p-10">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-7 text-center sm:text-left">
-              <div
-                className="shrink-0 w-28 h-28 rounded-full bg-law-navy flex items-center justify-center"
-                aria-hidden="true"
-              >
-                <span className="font-serif text-3xl font-bold text-law-gold tracking-wide">
-                  {partner.initials}
-                </span>
-              </div>
+              <img
+                src="/img/alberto-pacheco.webp"
+                alt={`${partner.name}, ${partner.role} de Pacheco · Espinoza & Cía. Abogados`}
+                width={512}
+                height={512}
+                loading="lazy"
+                decoding="async"
+                className="shrink-0 w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover shadow-md ring-4 ring-white"
+              />
 
               <div>
                 <h3 className="text-h3 font-serif font-bold text-law-navy">{partner.name}</h3>

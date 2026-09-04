@@ -73,7 +73,6 @@ export const partner = {
   name: 'Alberto Pacheco',
   role: 'Socio fundador',
   title: 'Abogado · Asesoría empresarial, litigación e inmobiliario',
-  initials: 'AP',
   bio: [
     'Abogado con más de 30 años de ejercicio profesional, dedicado a la asesoría jurídica de empresas, empresarios, comerciantes y clientes particulares.',
     'Su práctica se concentra en la litigación civil y comercial —juicios contractuales, ejecutivos, inmobiliarios y patrimoniales— y en el acompañamiento de proyectos inmobiliarios desde la adquisición y unificación de terrenos hasta su desarrollo y comercialización.',
