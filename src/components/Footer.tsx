@@ -4,13 +4,20 @@ import { cn } from '@/lib/utils';
 import { services } from '@/lib/content';
 import { COVERAGE_SHORT, EMAIL, PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 
+/*
+  Los anclas van con "/" delante a proposito. Este footer tambien se monta en
+  /privacidad y /terminos (via LegalPage), y ahi un href="#about" busca el id
+  en esa misma pagina, no lo encuentra y el enlace no hace nada.
+  Con "/#about" el navegador vuelve al home y salta a la seccion; estando ya
+  en el home es el mismo documento, asi que solo scrollea sin recargar.
+*/
 const quickLinks = [
-  { name: 'Inicio', href: '#home' },
-  { name: 'Nosotros', href: '#about' },
-  { name: 'Servicios', href: '#services' },
-  { name: 'Cómo trabajamos', href: '#process' },
-  { name: 'Preguntas frecuentes', href: '#faq' },
-  { name: 'Contacto', href: '#contact' }
+  { name: 'Inicio', href: '/#home' },
+  { name: 'Nosotros', href: '/#about' },
+  { name: 'Servicios', href: '/#services' },
+  { name: 'Cómo trabajamos', href: '/#process' },
+  { name: 'Preguntas frecuentes', href: '/#faq' },
+  { name: 'Contacto', href: '/#contact' }
 ];
 
 /*
@@ -129,7 +136,7 @@ const Footer = () => (
             {services.map((service) => (
               <li key={service.title}>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="text-white/70 hover:text-law-gold transition-colors duration-300"
                 >
                   {service.title}
