@@ -64,24 +64,29 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				law: {
-					// ProCausa
-					'navy': '#0A2342',
-					'navy-soft': '#143257',
-					// Pacheco Espinoza — extraido de logo.jpg. 6.32:1 sobre blanco (AA)
-					'teal': '#006885',
-					'teal-dark': '#00546B',      // 8.47:1 sobre blanco — hover
-					'teal-light': '#5CBBD4',     // 7.14:1 sobre navy — para fondos oscuros
-					// Dorado: decorativo. Sobre blanco da 2.37:1, NO usar como texto.
-					'gold': '#D5A021',           // 6.66:1 sobre navy — ok sobre oscuro
-					'gold-700': '#8A6410',       // 5.37:1 sobre blanco — unica variante de texto
-					'light-gray': '#F5F5F5',
-					'dark-gray': '#333333',
-					'cream': '#F8F4E3'
+					// Design system 2026: "Atelier Juris Teal" (DESIGN2.md)
+					'navy': '#1A363D',            // deep slate: headers/footer/paneles. 12.81:1 sobre blanco (AAA)
+					'navy-soft': '#0E5C6B',        // variante mas clara del estructural
+					'teal': '#0E5C6B',             // accion/CTA/enlaces. 7.60:1 sobre blanco (AA)
+					'teal-dark': '#09404B',        // 11.37:1 sobre blanco — hover
+					'teal-light': '#90D0E2',       // 7.51:1 sobre navy — texto/iconos en fondo oscuro
+					/*
+					  Brass (#D4AF37) da solo 2.10:1 sobre blanco: no sirve como
+					  texto ni borde ahi. El brief solo lo usa como borde decorativo
+					  con texto oscuro encima, o sobre el navy oscuro (6.09:1, ok).
+					  gold-700 es una variante oscurecida para el unico caso donde
+					  se necesitaria como borde/texto sobre fondo claro.
+					*/
+					'gold': '#D4AF37',             // 6.09:1 sobre navy — ok sobre oscuro
+					'gold-700': '#9F8329',         // 3.65:1 sobre blanco — variante borde/texto en claro
+					'light-gray': '#F8F9FA',
+					'dark-gray': '#1E292B',        // 14.92:1 sobre blanco (AAA)
+					'cream': '#EFF2F3'
 				}
 			},
 			fontFamily: {
-				'serif': ['"Source Serif 4"', 'Playfair Display', 'Georgia', 'serif'],
-				'sans': ['Inter', 'Montserrat', 'system-ui', 'sans-serif']
+				'serif': ['"EB Garamond"', '"Source Serif 4"', 'Georgia', 'serif'],
+				'sans': ['"Work Sans"', 'Inter', 'system-ui', 'sans-serif']
 			},
 			fontSize: {
 				'eyebrow': ['0.8125rem', { lineHeight: '1.2', letterSpacing: '0.08em', fontWeight: '600' }],
