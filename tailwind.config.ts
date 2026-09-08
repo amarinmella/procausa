@@ -64,24 +64,31 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				law: {
-					// ProCausa
-					'navy': '#0A2342',
-					'navy-soft': '#143257',
-					// Pacheco Espinoza — extraido de logo.jpg. 6.32:1 sobre blanco (AA)
-					'teal': '#006885',
-					'teal-dark': '#00546B',      // 8.47:1 sobre blanco — hover
-					'teal-light': '#5CBBD4',     // 7.14:1 sobre navy — para fondos oscuros
-					// Dorado: decorativo. Sobre blanco da 2.37:1, NO usar como texto.
-					'gold': '#D5A021',           // 6.66:1 sobre navy — ok sobre oscuro
-					'gold-700': '#8A6410',       // 5.37:1 sobre blanco — unica variante de texto
-					'light-gray': '#F5F5F5',
-					'dark-gray': '#333333',
-					'cream': '#F8F4E3'
+					// Design system 2026: verde petroleo + esmeralda (design.md)
+					'navy': '#144A42',           // primario institucional. 10.06:1 sobre blanco (AAA)
+					'navy-soft': '#1D6156',       // variante clara del primario, para overlays sutiles
+					/*
+					  El esmeralda del brief (#0DBA83) da solo 2.51:1 sobre blanco:
+					  no pasa ni el minimo de UI (3:1), menos aun texto (4.5:1). Se
+					  oscurece el MISMO matiz (H161 S0.93, solo baja el brillo) hasta
+					  cumplir AA. #0DBA83 puro se conserva como 'accent-vivid' para
+					  usos grandes/decorativos que no requieren texto legible encima.
+					*/
+					'teal': '#09825C',            // accion/enlaces/CTA. 4.82:1 sobre blanco (AA)
+					'teal-dark': '#076648',        // 6.99:1 sobre blanco — hover
+					'teal-light': '#4CDEA4',       // 5.89:1 sobre navy — texto/iconos en fondo oscuro
+					'accent-vivid': '#0DBA83',    // esmeralda vivo del brief: solo decorativo, no como texto
+					// El dorado se retira: su rol (resaltar sobre navy) lo cubre el mismo verde menta que teal-light
+					'gold': '#4CDEA4',             // 5.89:1 sobre navy (AA)
+					'gold-700': '#076648',         // variante oscura, uso residual
+					'light-gray': '#F5FBF8',
+					'dark-gray': '#1E2423',        // 15.77:1 sobre blanco (AAA)
+					'cream': '#EFF5F3'
 				}
 			},
 			fontFamily: {
-				'serif': ['"Source Serif 4"', 'Playfair Display', 'Georgia', 'serif'],
-				'sans': ['Inter', 'Montserrat', 'system-ui', 'sans-serif']
+				'serif': ['"Playfair Display"', '"Source Serif 4"', 'Georgia', 'serif'],
+				'sans': ['Outfit', 'Inter', 'system-ui', 'sans-serif']
 			},
 			fontSize: {
 				'eyebrow': ['0.8125rem', { lineHeight: '1.2', letterSpacing: '0.08em', fontWeight: '600' }],
