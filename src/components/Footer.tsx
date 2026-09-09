@@ -191,6 +191,18 @@ const Footer = () => (
           </a>
         </div>
       </div>
+
+      <p className="text-white/40 text-xs text-center md:text-left mt-4">
+        Desarrollado por{' '}
+        <a
+          href="https://www.innovaiastudio.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-law-gold transition-colors"
+        >
+          Innova IA Studio
+        </a>
+      </p>
     </div>
 
     <BackToTop />
