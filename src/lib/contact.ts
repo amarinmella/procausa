@@ -4,8 +4,8 @@
  * ContactSection y Footer, con riesgo de quedar desincronizados.
  */
 
-export const PHONE_DISPLAY = '+56 9 5309 5994';
-export const PHONE_E164 = '56953095994';
+export const PHONE_DISPLAY = '+56 9 7897 1826';
+export const PHONE_E164 = '56978971826';
 export const EMAIL = 'contacto@procausa.cl';
 
 /*
