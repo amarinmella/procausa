@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Paquetes de despliegue manual a Hostinger (build empaquetado, no fuente)
+*.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
