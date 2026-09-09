@@ -1,0 +1,26 @@
+
+# El sitio es una SPA de React (BrowserRouter): /privacidad y /terminos no
+# son archivos reales en el servidor, los resuelve el JS en el navegador.
+# Sin esto, entrar directo a esas URLs o recargar ahi da 404 en Apache.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Los archivos y carpetas que si existen (assets, imagenes) se sirven tal cual.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Todo lo demas cae a index.html, y React Router toma la ruta desde ahi.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cache largo para assets con hash en el nombre (Vite los versiona solo).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
