@@ -6,6 +6,13 @@
   RewriteEngine On
   RewriteBase /
 
+  # www.procausa.cl servia el mismo contenido que procausa.cl sin
+  # redirigir: dos URLs con el mismo contenido dividen la senal de SEO,
+  # justo el tipo de cosa que ayuda a que Google indexe la version vieja
+  # del sitio en vez de la actual. Se fuerza todo a la version sin www.
+  RewriteCond %{HTTP_HOST} ^www\.procausa\.cl$ [NC]
+  RewriteRule ^ https://procausa.cl%{REQUEST_URI} [L,R=301]
+
   # Los archivos y carpetas que si existen (assets, imagenes) se sirven tal cual.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
